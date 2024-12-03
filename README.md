@@ -31,7 +31,6 @@ https://rodolfogonzalezled.github.io/alurageek/
 - **styles/style.css**: Estilos personalizados.
 - **js/controllers/productControllers.js**: Lógica de agregar y eliminar productos.
 - **js/services/productServices.js**: Solicitudes HTTP (GET, POST, DELETE).
-- **db.json**: Base de datos simulada para **json-server**.
 - **package.json**: Dependencias y scripts.
 
 ## 🛠️ API Simulada
