@@ -4,6 +4,10 @@
 
 **AluraGeek** es una aplicación web que permite a los usuarios gestionar una lista de productos. Los usuarios pueden **visualizar**, **agregar** y **eliminar** productos, utilizando tecnologías frontend modernas y un servidor JSON simulado.
 
+## 🚀 Para su prueba, ingrese al siguiente enlace:
+https://rodolfogonzalezled.github.io/alurageek/
+
+
 ## 🔥 Características
 
 - **Visualizar** productos existentes.
