@@ -68,7 +68,8 @@ form.addEventListener("submit", async (event) => {
             );
             console.log("Producto creado:", newProduct);
             const newCard = createCard(newProduct);
-            productsContainer.appendChild(newCard);
+            productContainer.appendChild(newCard);
+            
         } catch (error) {
             console.error("Error al crear el producto:", error);
         }
