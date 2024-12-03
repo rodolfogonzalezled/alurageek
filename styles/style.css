@@ -263,10 +263,27 @@ button {
         width: calc(100% - 20px); 
         margin-bottom: 15px; 
     }
+    .cardProduct {
+        width: calc(100%/2);
+    }
 
     .button-container{
         flex-direction: column;
         gap: 1rem;
+    }
+
+    .products{
+        display: flex ;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .products > section{
+        width: 100%;
+    }
+
+    .products-container {
+        justify-content: center;
     }
 
     footer {
