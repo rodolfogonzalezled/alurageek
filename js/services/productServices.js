@@ -1,3 +1,6 @@
+import { toastError } from "../utils/toast.js";
+import { toastSuccess } from "../utils/toast.js";
+
 const BASE_URL = "https://673d000d4db5a341d833ad04.mockapi.io/products";
 
 const productList = async () => {
@@ -7,6 +10,7 @@ const productList = async () => {
         return await response.json();
     } catch (error) {
         console.log("Error obteniendo productos", error);
+        toastError("❌ Error obteniendo productos");
     }
 };
 
@@ -19,8 +23,10 @@ const deleteProduct = async (id) => {
             },
         });
         console.log(`Producto con id ${id} eliminado exitosamente`);
+        toastSuccess("❌ Producto eliminado correctamente");
     } catch (error) {
         console.error("Error en la solicitud DELETE:", error);
+        toastError("❌ Error eliminando producto");
     }
 };
 
@@ -36,9 +42,11 @@ const createProduct = async (name, price, image) => {
 
         const data = await response.json();
         console.log("Solicitud POST exitosa:", data);
+        toastSuccess("🛒 Producto agregado correctamente");
         return data;
     } catch (error) {
         console.error("Error en la solicitud POST:", error);
+        toastError("❌ Error en la creacion del producto");
     }
 };
 

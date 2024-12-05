@@ -1,4 +1,5 @@
 import { servicesProducts } from "../services/productServices.js";
+import { toastError } from "../utils/toast.js";
 
 const productContainer = document.querySelector("[data-product]");
 const form = document.querySelector("[data-form]");
@@ -12,6 +13,7 @@ const renderProducts = async () => {
         });
     } catch (error) {
         console.error("Error al renderizar productos:", error);
+        toastError("❌ Error al renderizar productos");
     }
 };
 
@@ -46,6 +48,7 @@ function addDeleteEvent(card, id) {
             console.log(`Producto con id ${id} eliminado`);
         } catch (error) {
             console.error(`Error al eliminar el producto con id ${id}:`, error);
+            toastError("❌ Error al eliminar el producto con id ${id}");
         }
     });
 };
@@ -58,7 +61,7 @@ form.addEventListener("submit", async (event) => {
     const image = document.querySelector("[data-image]").value;
 
     if (name === "" || price === "" || image === "") {
-        alert("Por favor, complete todos los campos");
+        toastError("❌ Por favor, complete todos los campos ❌")
     } else {
         try {
             const newProduct = await servicesProducts.createProduct(
@@ -69,11 +72,10 @@ form.addEventListener("submit", async (event) => {
             console.log("Producto creado:", newProduct);
             const newCard = createCard(newProduct);
             productContainer.appendChild(newCard);
-            
         } catch (error) {
             console.error("Error al crear el producto:", error);
+        toastError("❌ Error al crear el producto");
         }
-
         form.reset();
     }
 });
